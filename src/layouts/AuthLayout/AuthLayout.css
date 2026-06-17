@@ -1,0 +1,31 @@
+.auth-layout {
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh;
+  width: 100%;
+  background: #0f1722;
+}
+
+.auth-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+}
+
+
+@media (min-width: 1024px) {
+  .auth-layout {
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden; 
+  }
+
+  .auth-content {
+    width: 48%;
+    height: 100vh;
+    padding: 24px;
+    overflow-y: auto; 
+  }
+}

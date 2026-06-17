@@ -1,0 +1,309 @@
+.chargers-workspace-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.chargers-master-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chargers-title-stack h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.chargers-title-stack p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.chargers-add-action-green-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #24cb71; 
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.chargers-add-action-green-btn:hover {
+  opacity: 0.95;
+}
+
+
+
+.chargers-metric-toggles-ribbon-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.charger-status-toggle-card {
+  background-color: var(--bg-card); 
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  border-radius: 8px;
+}
+
+.charger-status-toggle-card.active-focus-green-border {
+  border-color: #24cb71; 
+  box-shadow: 0 0 0 1px #24cb71;
+}
+
+.charger-status-toggle-card .card-indicator-label-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px; 
+  width: max-content;  
+}
+
+.charger-status-toggle-card .card-indicator-label-line svg {
+  flex-shrink: 0;
+}
+
+
+.charger-status-toggle-card .card-indicator-label-line.available { 
+  background-color: rgba(36, 203, 113, 0.12); 
+  color: #24cb71; 
+}
+.charger-status-toggle-card .card-indicator-label-line.charging { 
+  background-color: rgba(0, 176, 255, 0.12); 
+  color: #00b0ff; 
+}
+.charger-status-toggle-card .card-indicator-label-line.faulted { 
+  background-color: rgba(239, 83, 80, 0.12); 
+  color: #ef5350; 
+}
+.charger-status-toggle-card .card-indicator-label-line.offline { 
+  background-color: rgba(143, 165, 188, 0.12); 
+  color: #8fa5bc; 
+}
+
+.charger-status-toggle-card .card-counter-bold-digit {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1;
+  padding-left: 4px;
+}
+
+
+.chargers-search-ribbon-row {
+  width: 100%;
+}
+
+.chargers-search-input-frame-box {
+  position: relative;
+  width: 100%;
+}
+
+.chargers-lens-icon-positional {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.chargers-search-control-input-field {
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 10px 14px 10px 38px;
+  border-radius: 6px;
+  outline: none;
+}
+
+
+.chargers-hardware-mesh-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.charger-hardware-card-node {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.hardware-card-top-identity-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.hardware-card-top-identity-line .charger-code-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.hardware-card-status-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; 
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.hardware-card-status-pill-badge svg {
+  flex-shrink: 0;
+}
+
+.hardware-card-status-pill-badge.available { background-color: rgba(36, 203, 113, 0.1); color: #24cb71; }
+.hardware-card-status-pill-badge.charging  { background-color: rgba(0, 176, 255, 0.1); color: #00b0ff; }
+.hardware-card-status-pill-badge.faulted   { background-color: rgba(239, 83, 80, 0.1); color: #ef5350; }
+.hardware-card-status-pill-badge.offline   { background-color: rgba(143, 165, 188, 0.1); color: #8fa5bc; }
+
+.charger-hardware-card-node h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.hardware-card-core-specs-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hardware-card-icon-frame-shield {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(143, 165, 188, 0.1);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.charger-hardware-card-node.charging .hardware-card-icon-frame-shield {
+  background-color: rgba(0, 176, 255, 0.1);
+  color: #00b0ff;
+}
+
+.hardware-card-specs-meta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hardware-card-specs-meta-stack .power-bold-output-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hardware-card-specs-meta-stack .connector-token-badge {
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 3px;
+  width: max-content;
+}
+
+.hardware-card-specs-meta-stack .connector-token-badge.ccs2 { background-color: rgba(36, 203, 113, 0.15); color: #24cb71; }
+.hardware-card-specs-meta-stack .connector-token-badge.type2 { background-color: rgba(0, 176, 255, 0.15); color: #00b0ff; }
+.hardware-card-specs-meta-stack .connector-token-badge.chademo { background-color: rgba(255, 145, 0, 0.15); color: #ff9100; }
+
+.hardware-card-sessions-timestamp-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: auto; 
+}
+
+.hardware-card-progress-bar-track-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin-top: auto; 
+  padding-top: 12px;
+}
+
+.hardware-card-progress-bar-track {
+  width: 100%;
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hardware-card-progress-bar-fill {
+  height: 100%;
+  background-color: #00b0ff; 
+  border-radius: 10px;
+}
+
+.hardware-card-critical-error-banner-bubble {
+  margin-top: 14px;
+  background-color: rgba(239, 83, 80, 0.1);
+  border: 1px solid rgba(239, 83, 80, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ef5350;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 1024px) {
+  .chargers-metric-toggles-ribbon-row { grid-template-columns: repeat(2, 1fr); }
+  .chargers-hardware-mesh-grid-wrapper { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .chargers-metric-toggles-ribbon-row,
+  .chargers-hardware-mesh-grid-wrapper { grid-template-columns: 1fr; }
+}

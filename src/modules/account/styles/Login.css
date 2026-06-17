@@ -1,0 +1,155 @@
+.login-card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-card h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.login-card p {
+  color: #8fa5bc;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.section-label {
+  display: block;
+  color: #8fa5bc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.login-card label {
+  display: block;
+  color: #9fb4c9;
+  font-size: 13px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  border: 1px solid #23405e;
+  border-radius: 6px;
+  color: white;
+  padding: 0 14px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.login-card input:focus {
+  border-color: #00e676;
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.password-header label {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.forgot-link {
+  color: #00e676;
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.login-options {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.login-card .checkbox-label {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  color: #8fa5bc !important;
+  font-size: 13px !important;
+  cursor: pointer;
+  user-select: none;
+  width: max-content;
+}
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid #23405e;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox:checked {
+  background-color: #00e676;
+  border-color: #00e676;
+}
+
+.custom-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  border: solid #0f1722;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.login-btn {
+  width: 100%;
+  height: 44px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 6px;
+  background: #15803d;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #166534;
+}
+
+.form-error-banner {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #f87171;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}

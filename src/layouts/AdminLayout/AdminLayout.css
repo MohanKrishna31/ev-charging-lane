@@ -1,0 +1,46 @@
+.admin-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  transition: padding 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: var(--bg-main);
+}
+
+/* Sidebar Minimization State Modifier Adjustments */
+.admin-layout.sidebar-minimized .sidebar {
+  width: 72px;
+}
+
+.admin-layout.sidebar-minimized .sidebar-user-info,
+.admin-layout.sidebar-minimized .sidebar-brand span,
+.admin-layout.sidebar-minimized .nav-link-block span,
+.admin-layout.sidebar-minimized .nav-link-badge,
+.admin-layout.sidebar-minimized .sidebar-action-btn span {
+  display: none !important;
+}
+
+.admin-layout.sidebar-minimized .nav-link-block {
+  justify-content: center;
+  padding: 12px;
+}
+
+.admin-layout.sidebar-minimized .sidebar-action-btn {
+  justify-content: center;
+  padding: 12px;
+}

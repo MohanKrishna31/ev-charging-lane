@@ -1,0 +1,29 @@
+.role-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.role-btn {
+  flex: 1;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #274768;
+  background: #0d2746;
+  color: #8fa5bc;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.role-btn:hover {
+  border-color: #3b5c7f;
+}
+
+.role-btn.active {
+  background: rgba(0, 230, 118, 0.1);
+  color: #00e676;
+  border-color: #00e676;
+}

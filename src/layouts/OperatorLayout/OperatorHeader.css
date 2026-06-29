@@ -1,0 +1,108 @@
+.operator-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card, #ffffff);
+  padding: 0 20px;
+  height: 50px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.operator-topbar .topbar-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.operator-topbar .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.operator-topbar .topbar-bell {
+  position: relative;
+  cursor: pointer;
+  color: var(--text-muted, #6b7280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.operator-topbar .topbar-bell:hover { background: var(--hover-table-row, #f3f4f6); }
+
+.operator-topbar .topbar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-color, #e5e7eb);
+}
+
+.operator-topbar .bell-badge {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 7px;
+  height: 7px;
+  background: #ef4444;
+  border-radius: 50%;
+  border: 1.5px solid var(--bg-card, #ffffff);
+}
+
+.operator-topbar .topbar-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.operator-topbar .topbar-user { display: flex; flex-direction: column; }
+.operator-topbar .topbar-user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+.operator-topbar .topbar-user-role {
+  font-size: 10px;
+  color: var(--text-muted, #6b7280);
+}
+
+.operator-topbar .topbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary, #111827);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .operator-topbar .topbar-hamburger {
+    display: flex;
+  }
+  .operator-topbar {
+    padding: 0 16px;
+    height: 56px;
+    gap: 10px;
+  }
+  .operator-topbar .topbar-title {
+    font-size: 15px;
+  }
+  .operator-topbar .topbar-user {
+    display: none;
+  }
+  .operator-topbar .topbar-divider {
+    display: none;
+  }
+}

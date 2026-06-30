@@ -1,0 +1,647 @@
+/* Chargers page styles */
+.chargers-page {
+  padding: 16px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chargers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.chargers-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chargers-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.chargers-subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.chargers-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-charger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #16a34a;
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.add-charger-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(22, 163, 74, 0.16);
+}
+
+/* Summary Cards */
+.charger-summary-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.charger-summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: var(--theme-transition), transform 0.18s ease;
+  min-height: 80px;
+  cursor: pointer;
+}
+
+.charger-summary-card:hover {
+  transform: translateY(-1px);
+}
+
+.charger-summary-card.selected {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.charger-summary-card.available.selected {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.charger-summary-card.charging.selected {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.charger-summary-card.faulted.selected {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.charger-summary-card.offline.selected {
+  border-color: rgba(100, 116, 139, 0.4);
+}
+
+.charger-summary-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+.charger-summary-card.available .charger-summary-label {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.charger-summary-card.charging .charger-summary-label {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.charger-summary-card.faulted .charger-summary-label {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.charger-summary-card.offline .charger-summary-label {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+.summary-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.charger-summary-card.available .summary-badge-dot { background: #22c55e; }
+.charger-summary-card.charging .summary-badge-dot { background: #3b82f6; }
+.charger-summary-card.faulted .summary-badge-dot { background: #ef4444; }
+.charger-summary-card.offline .summary-badge-dot { background: #64748b; }
+
+.charger-summary-count {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Toolbar & Search */
+.chargers-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 0;
+  gap: 12px;
+}
+
+.chargers-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.25s;
+  box-shadow: 0 10px 24px rgba(15, 36, 48, 0.08);
+}
+
+.chargers-search svg {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.chargers-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chargers-search input::placeholder {
+  color: #94a3b8;
+}
+
+.chargers-search:focus-within {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+  background: var(--bg-card);
+}
+
+/* Grid Layout */
+.charger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.charger-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: var(--theme-transition);
+}
+
+.charger-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.charger-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charger-card-id-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.charger-card-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.charger-card-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.charger-card-status-badge.available {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.charger-card-status-badge.charging {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.charger-card-status-badge.faulted {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.charger-card-status-badge.offline {
+  background: #f8fafc;
+  color: #475569;
+}
+
+.charger-card-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Specs area */
+.charger-card-spec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .charger-card-spec {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.spec-icon-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.spec-icon-circle.charging-active {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+body.dark-mode .spec-icon-circle {
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+body.dark-mode .spec-icon-circle.charging-active {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+}
+
+.spec-power {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-grow: 1;
+}
+
+.spec-connector {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1.5px solid #22c55e;
+  color: #22c55e;
+}
+
+.spec-connector.type-2 {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.spec-connector.chademo {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+/* Active session progress bar */
+.charger-active-session {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.active-session-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.active-session-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.active-session-progress-bar {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+body.dark-mode .active-session-progress-bar {
+  background: #1e3a4a;
+}
+
+.active-session-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #3b82f6;
+  transition: width 0.4s ease;
+}
+
+.active-session-progress-percent {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Warning Banner */
+.charger-card-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef2f2;
+  border: 1px dashed rgba(220, 38, 38, 0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+body.dark-mode .charger-card-warning {
+  background: #3f1115; /* Dark reddish background */
+  border: none; /* No border as per screenshot */
+}
+
+.warning-icon {
+  color: #ef4444;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.warning-text {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #ef4444;
+}
+
+/* Footer Section */
+.charger-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+  margin-top: auto;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.footer-last-used {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Theme overrides for Dark Mode */
+body.dark-mode .charger-card-status-badge.available {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+}
+
+body.dark-mode .charger-card-status-badge.charging {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+}
+
+body.dark-mode .charger-card-status-badge.faulted {
+  background: rgba(220, 38, 38, 0.15);
+  color: #f87171;
+}
+
+body.dark-mode .charger-card-status-badge.offline {
+  background: rgba(71, 85, 105, 0.15);
+  color: #94a3b8;
+}
+
+/* Dark mode overrides for summary cards */
+body.dark-mode .charger-summary-card.available .charger-summary-label {
+  background: #022c22;
+  color: #10b981;
+}
+
+body.dark-mode .charger-summary-card.charging .charger-summary-label {
+  background: #172554;
+  color: #3b82f6;
+}
+
+body.dark-mode .charger-summary-card.faulted .charger-summary-label {
+  background: #450a0a;
+  color: #ef4444;
+}
+
+body.dark-mode .charger-summary-card.offline .charger-summary-label {
+  background: #0f172a;
+  color: #94a3b8;
+}
+
+/* Dark mode overrides for selected summary cards */
+body.dark-mode .charger-summary-card.selected {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .charger-summary-card.available.selected {
+  border-color: #22c55e;
+}
+
+body.dark-mode .charger-summary-card.charging.selected {
+  border-color: #3b82f6;
+}
+
+body.dark-mode .charger-summary-card.faulted.selected {
+  border-color: #ef4444;
+}
+
+body.dark-mode .charger-summary-card.offline.selected {
+  border-color: #64748b;
+}
+
+
+
+/* ════════════════════════════════════
+   Responsive: Tablet (≤ 768px)
+   ════════════════════════════════════ */
+@media (max-width: 768px) {
+  .chargers-page {
+    padding: 18px 16px;
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .chargers-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .chargers-title {
+    font-size: 22px;
+  }
+
+  .chargers-actions {
+    align-self: flex-start;
+  }
+
+  .charger-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .charger-summary-card {
+    padding: 18px 20px;
+    min-height: 90px;
+    border-radius: 14px;
+  }
+
+  .charger-summary-count {
+    font-size: 24px;
+  }
+
+  .chargers-toolbar {
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .chargers-search {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .charger-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ════════════════════════════════════
+   Responsive: Large Phone (≤ 600px)
+   ════════════════════════════════════ */
+@media (max-width: 600px) {
+  .charger-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ════════════════════════════════════
+   Responsive: Small Phone (≤ 480px)
+   ════════════════════════════════════ */
+@media (max-width: 480px) {
+  .chargers-page {
+    padding: 14px 12px;
+    gap: 14px;
+  }
+
+  .chargers-title {
+    font-size: 18px;
+  }
+
+  .charger-summary-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .charger-summary-card {
+    padding: 10px 12px;
+    min-height: 64px;
+    border-radius: 10px;
+  }
+
+  .charger-summary-label {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .charger-summary-count {
+    font-size: 18px;
+  }
+
+  .chargers-toolbar {
+    padding: 0;
+    background: transparent;
+    border: none;
+    gap: 10px;
+  }
+
+  .chargers-search {
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .add-charger-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    gap: 6px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .add-charger-btn .btn-plus {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .add-charger-btn .btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 11px;
+    line-height: 1.15;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .charger-card {
+    padding: 12px 14px;
+    border-radius: 10px;
+    gap: 4px;
+  }
+}

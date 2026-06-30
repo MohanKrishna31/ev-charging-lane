@@ -1,0 +1,500 @@
+.sessions-workspace-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.sessions-master-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sessions-title-stack h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.sessions-title-stack p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.sessions-refresh-neutral-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.sessions-refresh-neutral-btn:hover {
+  background-color: var(--sidebar-active);
+}
+
+
+.sessions-analytics-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.session-metric-card-node {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.session-metric-card-node .metric-label-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.session-metric-card-node .metric-bold-counter-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.session-metric-card-node .metric-bold-counter-value.active { color: #00b0ff; }
+.session-metric-card-node .metric-bold-counter-value.completed { color: #24cb71; }
+.session-metric-card-node .metric-bold-counter-value.failed { color: #ef5350; }
+.session-metric-card-node .metric-bold-counter-value.energy { color: #ff9100; }
+
+
+.sessions-control-operations-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.sessions-toggle-pills-container-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.session-view-pill-trigger-btn {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.session-view-pill-trigger-btn.active-all {
+  background-color: #24cb71 !important;
+  color: #0f172a !important;
+  font-weight: 600;
+}
+
+.session-view-pill-trigger-btn.active-live {
+  background-color: #24cb71 !important;
+  color: #0f172a !important;
+  font-weight: 600;
+}
+
+
+.session-view-pill-trigger-btn .pill-status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #24cb71; 
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(36, 203, 113, 0.7);
+  animation: global-green-breathing-glow 1.6s infinite ease-in-out;
+}
+
+.sessions-search-input-frame-box {
+  position: relative;
+  flex: 1;
+}
+
+.sessions-lens-icon-positional {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.sessions-search-control-input-field {
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 10px 14px 10px 38px;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.sessions-search-control-input-field:focus {
+  border-color: #24cb71;
+  box-shadow: 0 0 0 1px #24cb71;
+}
+
+
+
+.sessions-layout-split-screen-chassis {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.sessions-master-table-scroller-panel {
+  flex: 1;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.sessions-html-table-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.sessions-html-table-matrix th {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sessions-html-table-matrix tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.1s ease;
+}
+
+.sessions-html-table-matrix tbody tr:last-child {
+  border-bottom: none;
+}
+
+.sessions-html-table-matrix tbody tr:hover {
+  background-color: var(--sidebar-active);
+}
+
+.sessions-html-table-matrix td {
+  padding: 14px 16px;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  vertical-align: middle;
+}
+
+.session-code-bold-meta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.session-code-bold-meta-stack .primary-code-text {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.session-code-bold-meta-stack .secondary-time-text {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.session-identity-meta-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.session-identity-meta-lines .title-headline {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.session-identity-meta-lines .subtitle-caption {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+
+.session-table-pill-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.session-table-pill-status.active {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #3b82f6 !important;
+}
+
+.session-table-pill-status.completed {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
+}
+
+.session-table-pill-status.failed {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+}
+
+
+.session-active-breathing-pulse {
+  color: #3b82f6 !important;
+  animation: inline-row-blue-pulse 1.6s infinite ease-in-out;
+}
+
+.session-row-action-trigger-eye-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+  outline: none;
+}
+
+.session-row-action-trigger-eye-btn:hover,
+.session-row-action-trigger-eye-btn.active-monitored {
+  background-color: var(--bg-main);
+  color: #00b0ff;
+}
+
+
+.session-monitor-sidebar-panel {
+  width: 340px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 20px;
+  animation: slideInRight 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.monitor-sidebar-header-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.monitor-sidebar-header-line h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.monitor-sidebar-header-line .close-trigger-txt-btn {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  outline: none;
+}
+
+.monitor-radial-charging-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.radial-svg-relative-frame {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radial-svg-relative-frame svg {
+  transform: rotate(-90deg);
+}
+
+.radial-svg-relative-frame .radial-track-rail-circle {
+  fill: none;
+  stroke: var(--border-color);
+}
+
+.radial-svg-relative-frame .radial-glowing-fill-circle {
+  fill: none;
+  stroke: #24cb71; 
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.radial-center-absolute-percentage-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radial-center-absolute-percentage-label .digit-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.radial-center-absolute-percentage-label .sub-title {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.monitor-properties-specs-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.monitor-spec-row-node {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12.5px;
+}
+
+.monitor-spec-row-node .property-field-title-label {
+  color: var(--text-secondary);
+}
+
+.monitor-spec-row-node .property-resolved-bold-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.monitor-panel-action-buttons-flex-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.monitor-panel-action-buttons-flex-row .stop-session-danger-trigger-btn {
+  width: 100%;
+  background-color: rgba(239, 83, 80, 0.12);
+  color: #ef5350;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.monitor-panel-action-buttons-flex-row .stop-session-danger-trigger-btn:hover {
+  background-color: rgba(239, 83, 80, 0.2);
+}
+
+.monitor-panel-action-buttons-flex-row .contact-user-primary-steel-btn {
+  width: 100%;
+  background-color: var(--border-color);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.monitor-panel-action-buttons-flex-row .contact-user-primary-steel-btn:hover {
+  background-color: var(--sidebar-active);
+}
+
+
+@keyframes global-green-breathing-glow {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(36, 203, 113, 0.5); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 5px rgba(36, 203, 113, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(36, 203, 113, 0); }
+}
+
+@keyframes inline-row-blue-pulse {
+  0% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 1024px) {
+  .sessions-analytics-summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .sessions-layout-split-screen-chassis { flex-direction: column; }
+  .session-monitor-sidebar-panel { width: 100%; position: static; }
+}
+
+@media (max-width: 768px) {
+  .sessions-analytics-summary-grid { grid-template-columns: 1fr; }
+  .sessions-control-operations-ribbon { flex-direction: column; align-items: flex-start; }
+  .sessions-toggle-pills-container-box { width: 100%; }
+  .session-view-pill-trigger-btn { flex: 1; justify-content: center; }
+}

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../modules/account/pages/Login";
 import ForgotPassword from "../modules/account/pages/ForgotPassword";
 import VerifyOTP from "../modules/account/pages/VerifyOTP";
@@ -19,6 +19,21 @@ import LiveSessions from "../modules/operator/pages/LiveSessions";
 import OperatorStations from "../modules/operator/pages/Stations";
 import OperatorChargers from "../modules/operator/pages/Chargers";
 import Alerts from "../modules/operator/pages/Alerts";  
+
+const AdminGuard = ({ children }: { children: React.ReactNode }) => {
+  const sessionData = sessionStorage.getItem("ev_lane_session");
+  if (sessionData) {
+    try {
+      const user = JSON.parse(sessionData);
+      const role = user?.role?.toLowerCase() || "";
+      if (role.includes("operator")) {
+        return <Navigate to="/operator/livesessions" replace />;
+      }
+    } catch (e) {}
+  }
+  return <>{children}</>;
+};
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -28,7 +43,7 @@ const AppRoutes = () => {
       <Route path="/reset-password" element={<ResetPassword />} />
       
       {/* Super Admin Workspace Paths */}
-      <Route path="/admin/dashboard" element={<Dashboard />} />
+      <Route path="/admin/dashboard" element={<AdminGuard><Dashboard /></AdminGuard>} />
       
       {/* Vendors Management Platform Links */}
       <Route path="/admin/vendors" element={<Vendors />} />

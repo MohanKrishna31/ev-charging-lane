@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   };
 
   React.useEffect(() => {
-    const sidebarEl = document.querySelector(".sidebar") as HTMLElement | null;
+    const sidebarEl = document.querySelector(".operator-sidebar") as HTMLElement | null;
     if (!sidebarEl) return;
 
     const handleWheel = (e: WheelEvent) => {
@@ -64,7 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <aside
-      className={`sidebar ${isCollapsed ? "collapsed" : ""} ${isMobileOpen ? "mobile-open" : ""}`}
+      className={`operator-sidebar ${isCollapsed ? "collapsed" : ""} ${isMobileOpen ? "mobile-open" : ""}`}
     >
       <button
         className="sidebar-toggle-btn"

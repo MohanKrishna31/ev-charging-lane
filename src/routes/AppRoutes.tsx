@@ -18,7 +18,36 @@ import Settings from "../modules/superadmin/pages/Settings";
 import LiveSessions from "../modules/operator/pages/LiveSessions";
 import OperatorStations from "../modules/operator/pages/Stations";
 import OperatorChargers from "../modules/operator/pages/Chargers";
-import Alerts from "../modules/operator/pages/Alerts";  
+import Alerts from "../modules/operator/pages/Alerts";
+
+import VendorDashboard from "../modules/vendor/pages/Dashboard";
+import VendorStations from "../modules/vendor/pages/Stations";
+import VendorChargers from "../modules/vendor/pages/Chargers";
+import VendorSessions from "../modules/vendor/pages/Sessions";
+import VendorPayments from "../modules/vendor/pages/Payments";
+import VendorOperators from "../modules/vendor/pages/Operators";
+import VendorReports from "../modules/vendor/pages/Reports";
+import VendorNotifications from "../modules/vendor/pages/Notifications";
+import VendorLayout from "../layouts/VendorLayout/VendorLayout";
+
+const VendorGuard = ({ children }: { children: React.ReactNode }) => {
+  const sessionData = sessionStorage.getItem("ev_lane_session");
+  if (sessionData) {
+    try {
+      const user = JSON.parse(sessionData);
+      const role = user?.role?.toLowerCase() || "";
+      if (role.includes("operator")) {
+        return <Navigate to="/operator/livesessions" replace />;
+      }
+      if (role.includes("admin") && !role.includes("vendor")) {
+        return <Navigate to="/admin/dashboard" replace />;
+      }
+    } catch (e) {}
+  } else {
+    return <Navigate to="/" replace />;
+  }
+  return <>{children}</>;
+};
 
 const AdminGuard = ({ children }: { children: React.ReactNode }) => {
   const sessionData = sessionStorage.getItem("ev_lane_session");
@@ -28,6 +57,9 @@ const AdminGuard = ({ children }: { children: React.ReactNode }) => {
       const role = user?.role?.toLowerCase() || "";
       if (role.includes("operator")) {
         return <Navigate to="/operator/livesessions" replace />;
+      }
+      if (role.includes("vendor")) {
+        return <Navigate to="/vendor/dashboard" replace />;
       }
     } catch (e) {}
   }
@@ -90,6 +122,19 @@ const AppRoutes = () => {
 
       {/* Operator Alerts Module Registries */}
       <Route path="/operator/alerts" element={<Alerts />} />
+
+      {/* Vendor Workspace Paths */}
+      <Route path="/vendor" element={<Navigate to="/vendor/dashboard" replace />} />
+      <Route path="/vendor/dashboard" element={<VendorGuard><VendorLayout><VendorDashboard /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/stations" element={<VendorGuard><VendorLayout><VendorStations /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/stations/add" element={<VendorGuard><VendorLayout><VendorStations /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/chargers" element={<VendorGuard><VendorLayout><VendorChargers /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/sessions" element={<VendorGuard><VendorLayout><VendorSessions /></VendorLayout></VendorGuard>} /> 
+      <Route path="/vendor/payments" element={<VendorGuard><VendorLayout><VendorPayments /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/operators" element={<VendorGuard><VendorLayout><VendorOperators /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/reports" element={<VendorGuard><VendorLayout><VendorReports /></VendorLayout></VendorGuard>} />
+      <Route path="/vendor/notifications" element={<VendorGuard><VendorLayout><VendorNotifications /></VendorLayout></VendorGuard>} />
+
     </Routes>
   );
 };

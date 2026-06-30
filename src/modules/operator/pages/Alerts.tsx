@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import "../Styles/Alerts.css";
-import  OperatorLayout  from "../../../layouts/OperatorLayout/OperatorLayout";
+import OperatorLayout from "../../../layouts/OperatorLayout/OperatorLayout";
 import type { Alert } from "../types/alerts";
 import { alerts as alertsData } from "../services/alerts";
 
@@ -50,6 +50,15 @@ const Alerts: React.FC = () => {
 
   const markAllRead = () => {
     setAlertsList((prev) => prev.map((alert) => ({ ...alert, read: true })));
+  };
+
+  // NEW FUNCTION: mark only the clicked alert as read
+  const markOneRead = (clickedId: string | number) => {
+    setAlertsList((prev) =>
+      prev.map((alert) =>
+        alert.id === clickedId ? { ...alert, read: true } : alert
+      )
+    );
   };
 
   const getAlertIcon = (icon: Alert["icon"]) => {
@@ -119,6 +128,7 @@ const Alerts: React.FC = () => {
               <div
                 key={alert.id}
                 className={`alert-card ${alert.read ? "read" : "unread"} ${alert.priority}`}
+                onClick={() => markOneRead(alert.id)} // <-- NEW CLICK HANDLER
               >
                 <div
                   className={`alert-card-icon-wrap ${alert.priority} icon-${alert.icon}`}

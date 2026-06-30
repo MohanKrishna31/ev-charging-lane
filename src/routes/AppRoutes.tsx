@@ -14,6 +14,11 @@ import Reports from "../modules/superadmin/pages/Reports";
 import Notifications from "../modules/superadmin/pages/Notifications";
 import Settings from "../modules/superadmin/pages/Settings";
 
+
+import LiveSessions from "../modules/operator/pages/LiveSessions";
+import OperatorStations from "../modules/operator/pages/Stations";
+import OperatorChargers from "../modules/operator/pages/Chargers";
+import Alerts from "../modules/operator/pages/Alerts";  
 const AppRoutes = () => {
   return (
     <Routes>
@@ -57,6 +62,19 @@ const AppRoutes = () => {
 
       {/* Settings Module Registries */}
       <Route path="/admin/settings" element={<Settings />} />
+
+      
+      {/* Operator Dashboard Module Registries */}
+      <Route path="/operator/livesessions" element={<LiveSessions />} />
+
+      {/* Operator Stations Module Registries */}
+      <Route path="/operator/stations" element={<OperatorStations />} />
+
+      {/* Operator Chargers Module Registries */}
+      <Route path="/operator/chargers" element={<OperatorChargers />} />
+
+      {/* Operator Alerts Module Registries */}
+      <Route path="/operator/alerts" element={<Alerts />} />
     </Routes>
   );
 };
